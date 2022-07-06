@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TP6_Qatar_2022.Models
 
-{
+  namespace TP6_Qatar_2022.Models
 
-public class Equipo{
-
+  {
+    public class Equipo{
     private int _idEquipo;
     private string _nombre = "";
     private string _escudo = "";
@@ -28,7 +27,7 @@ public class Equipo{
 
     public Equipo(){
 
-         _idEquipo = 0;
+        _idEquipo = 0;
         _nombre = "Sin nombre aún";
         _escudo = "Sin escudo aún";
         _camiseta = "Sin camiseta aún";
@@ -37,9 +36,9 @@ public class Equipo{
 
     }
 
-    public int IdEquipo{
-        get{return _idEquipo;}
-        set{_idEquipo = value;}
+      public int IdEquipo{
+         get{return _idEquipo;}
+         set{_idEquipo = value;}
     }
 
       public string Nombre{
