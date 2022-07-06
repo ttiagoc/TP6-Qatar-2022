@@ -35,11 +35,37 @@ public class Equipo{
         _continente = "Sin continente aún";
         _copasGanadas = 0;
 
-
     }
 
+    public int IdEquipo{
+        get{return _idEquipo;}
+        set{_idEquipo = value;}
+    }
 
+      public string Nombre{
+        get{return _nombre;}
+        set{_nombre = value;}
+    }
 
+      public string Escudo{
+        get{return _escudo;}
+        set{_escudo = value;}
+    }
+
+      public string Camiseta{
+        get{return _camiseta;}
+        set{_camiseta = value;}
+    }
+
+      public string Continente{
+        get{return _continente;}
+        set{_continente = value;}
+    }
+
+      public int CopasGanadas{
+        get{return _copasGanadas;}
+        set{_copasGanadas = value;}
+    }
 
 
 
