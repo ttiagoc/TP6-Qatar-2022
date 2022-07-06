@@ -32,7 +32,7 @@ public class Jugador{
          _idJugador = 0;
         _idEquipo = 0;
         _nombre = "Sin nombre";
-        _fechaNacimiento = ;
+        _fechaNacimiento = new DateTime(1111,11,11);
         _foto = "Sin foto";
         _equipoActual = "Sin equipo";
     }
@@ -47,24 +47,24 @@ public class Jugador{
         set{_idEquipo = value;}
     }
 
-      public string Escudo{
-        get{return _escudo;}
-        set{_escudo = value;}
+      public string Nombre{
+        get{return _nombre;}
+        set{_nombre = value;}
     }
 
-      public string Camiseta{
-        get{return _camiseta;}
-        set{_camiseta = value;}
+      public DateTime FechaNacimiento{
+        get{return _fechaNacimiento;}
+        set{_fechaNacimiento = value;}
     }
 
-      public string Continente{
-        get{return _continente;}
-        set{_continente = value;}
+      public string Foto{
+        get{return _foto;}
+        set{_foto = value;}
     }
 
-      public int CopasGanadas{
-        get{return _copasGanadas;}
-        set{_copasGanadas = value;}
+      public string EquipoActual{
+        get{return _equipoActual;}
+        set{_equipoActual = value;}
     }
 
 
