@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
-
+using Dapper;
 
     namespace TP6_Qatar_2022.Models{
 
@@ -25,7 +25,15 @@ using System.Data.SqlClient;
 
             }
 
+             public static int EliminarJugador(string JugadorAEliminar){
+                 int jugadoresEliminados = 0;
+                 string sql = "DELETE FROM Jugador WHERE Jugador = @jJugador";
+                    using(SqlConnection db = new SqlConnection(_connectionString)){
+                      jugadoresEliminados = db.Execute(sql, new {jJugador = JugadorAEliminar} );
+                    }
 
+                        return jugadoresEliminados;
+            }
 
 
 
