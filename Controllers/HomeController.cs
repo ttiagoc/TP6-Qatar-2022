@@ -41,7 +41,7 @@ public class HomeController : Controller
     [HttpPost] IActionResult GuardarJugador(Jugador Jug){
 
             int IdEquipo = BD.AgregarJugador(Jug);
-            
+
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
              ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
             
@@ -49,15 +49,14 @@ public class HomeController : Controller
     }
 
 
-
-
-
     public IActionResult EliminarJugador(int IdJugador, int IdEquipo){
 
-        BD.EliminarJugador()
+             BD.EliminarJugador(IdJugador);
 
+             ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
+             ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
 
-         return View("DetalleEquipo");
+                 return View("DetalleEquipo");
     }
 
 

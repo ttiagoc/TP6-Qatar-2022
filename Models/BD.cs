@@ -27,7 +27,7 @@ using Dapper;
 
             }
 
-             public static int EliminarJugador(string JugadorAEliminar){
+             public static int EliminarJugador(int JugadorAEliminar){
                  int jugadoresEliminados = 0;
                  string sql = "DELETE FROM Jugador WHERE Jugador = @jJugador";
                     using(SqlConnection db = new SqlConnection(_connectionString)){
