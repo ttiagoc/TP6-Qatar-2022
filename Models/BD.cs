@@ -12,7 +12,7 @@ using Dapper;
             private static List <Equipo> _ListaEquipos = new List<Equipo>();
             private static List <Jugador> _ListaJugadores = new List<Jugador>();
 
-            private static string _connectionString = @"Server=A-AMI-203\SQLEXPRESS;
+            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
                   DataBase=Qatar2022;Trusted_Connection=True;";
 
             public static int AgregarJugador(Jugador Jug){
