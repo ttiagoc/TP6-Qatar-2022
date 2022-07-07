@@ -19,6 +19,49 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult VerDetalleEquipo(int IdEquipo)
+    {
+        ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
+        ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+        return View("DetalleEquipo");
+    }
+
+    public IActionResult VerDetalleJugador(int IdJugador)
+    {
+        ViewBag.miJugador = BD.VerInfoJugador(IdJugador);
+        return View("DetalleJugador");
+    }
+
+    public IActionResult AgregarJugador(int IdEquipo)
+    {
+        ViewBag.IdEquipo = IdEquipo;
+        return View("CargarJugadores");
+    }
+
+    [HttpPost] IActionResult GuardarJugador(Jugador Jug){
+
+            int IdEquipo = BD.AgregarJugador(Jug);
+            
+             ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
+             ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+            
+                return View("DetalleEquipo");
+    }
+
+
+
+
+
+    public IActionResult EliminarJugador(int IdJugador, int IdEquipo){
+
+        BD.EliminarJugador()
+
+
+         return View("DetalleEquipo");
+    }
+
+
+
     public IActionResult Privacy()
     {
         return View();
