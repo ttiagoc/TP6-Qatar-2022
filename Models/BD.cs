@@ -36,7 +36,15 @@ using Dapper;
             }
 
 
+            public static Equipo VerInfoEquipo(int IdEquipo){
 
+                Equipo miEquipo = null;
+                using(SqlConnection db = new SqlConnection(_connectionString)){
+                      string sql = "SELECT * FROM Equipo WHERE IdEquipo = @pIdEquipo";
+                      miEquipo = db.QueryFirstOrDefault<Equipo>(sql, new {pIdEquipo = IdEquipo});
+                    }
+                    return miEquipo;
+            }
 
 
 
