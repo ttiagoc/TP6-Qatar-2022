@@ -10,10 +10,20 @@ using System.Data.SqlClient;
         public static class BD{
 
 
-            private static string _connectionString = @"Server=DESKTOP-P8MR2F6\SQLEXPRESS;
+            private static string _connectionString = @"Server=A-AMI-203\SQLEXPRESS;
             DataBase = Qatar2022;Trusted_Connection=True";
 
-            
+            public static void AgregarJugador(Jugador Jug){
+
+              string SQL = "INSERT INTO Jugador(IdJugador, IdEquipo, Nombre, FechaNacimiento, Foto, EquipoActual) VALUES (@pIdJugador, @pIdEquipo, @pNombre, @pFechaNacimiento, @pFoto, @pEquipoActual)";
+
+                using(SqlConnection db = new SqlConnection(_connectionString)){
+                    db.Execute(SQL, new {pIdJugador = Jug.IdJugador, pIdEquipo = Jug.IdEquipo, pNombre = Jug.Nombre, pFechaNacimiento = Jug.FechaNacimiento, pFoto = Jug.Foto, pEquipoActual = Jug.EquipoActual } );
+                }
+
+
+
+            }
 
 
 
