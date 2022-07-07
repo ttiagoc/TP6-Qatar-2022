@@ -15,7 +15,7 @@ using Dapper;
             private static string _connectionString = @"Server=A-AMI-203\SQLEXPRESS;
             DataBase = Qatar2022;Trusted_Connection=True";
 
-            public static void AgregarJugador(Jugador Jug){
+            public static int AgregarJugador(Jugador Jug){
 
               string SQL = "INSERT INTO Jugador(Nombre, FechaNacimiento, Foto, EquipoActual) VALUES (@pNombre, @pFechaNacimiento, @pFoto, @pEquipoActual)";
 
@@ -23,7 +23,7 @@ using Dapper;
                     db.Execute(SQL, new {pNombre = Jug.Nombre, pFechaNacimiento = Jug.FechaNacimiento, pFoto = Jug.Foto, pEquipoActual = Jug.EquipoActual } );
                 }
 
-
+                    return Jug.IdEquipo;
 
             }
 
