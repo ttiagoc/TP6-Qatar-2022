@@ -9,6 +9,8 @@ using Dapper;
 
         public static class BD{
 
+            private static List <Equipo> _ListaEquipos = new List<Equipo>();
+            private static List <Jugador> _ListaJugadores = new List<Jugador>();
 
             private static string _connectionString = @"Server=A-AMI-203\SQLEXPRESS;
             DataBase = Qatar2022;Trusted_Connection=True";
@@ -46,6 +48,35 @@ using Dapper;
                     return miEquipo;
             }
 
+            public static Jugador VerInfoJugador(int IdJugador){
+
+                Jugador miJugador = null;
+                using(SqlConnection db = new SqlConnection(_connectionString)){
+                      string sql = "SELECT * FROM Jugador WHERE IdJugador = @pIdJugador";
+                      miJugador = db.QueryFirstOrDefault<Jugador>(sql, new {pIdJugador = IdJugador});
+                    }
+                    return miJugador;
+            }
+
+            public static List <Equipo> ListarEquipos(){
+
+                    using(SqlConnection db = new SqlConnection(_connectionString)){
+                      string sql = "SELECT * FROM Equipo";
+                     _ListaEquipos = db.Query<Equipo>(sql).ToList();
+                    }
+
+                    return _ListaEquipos;
+            }
+
+            public static List <Jugador> ListarJugadores(int IdEquipo){
+
+                    using(SqlConnection db = new SqlConnection(_connectionString)){
+                      string sql = "SELECT * FROM Jugador WHERE IdEquipo = @pIdEquipo";
+                     _ListaJugadores = db.Query<Jugador>(sql).ToList();
+                    }
+
+                    return _ListaJugadores;
+            }
 
 
 
