@@ -4,6 +4,8 @@
 
 <h1 class="text-center">EQUIPOS</h1>
 
+
+
 @foreach (Equipo eq2 in ViewBag._ListaEquipos)
 {
     <div class="card" style="width: 18rem;">
@@ -13,5 +15,8 @@
             <a href='@Url.Action("VerDetalleEquipo","Home", new {eq=eq2.IdEquipo})'  class="btn btn-primary mt-2">Detalle</a>
         </div>
     </div>
+       
 }
 
+
+       
