@@ -16,7 +16,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewBag._ListaEquipos = BD.ListarEquipos();
-        return View("Index");
+        return View();
     }
 
     public IActionResult VerDetalleEquipo(int IdEquipo)

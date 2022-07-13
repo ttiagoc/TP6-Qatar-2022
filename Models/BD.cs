@@ -56,17 +56,18 @@ using Dapper;
 
             public static Equipo VerInfoEquipo(int IdEquipo){
 
-                Equipo miEquipo = null;
+                Equipo miEquipo;
+                string sql = "SELECT * FROM Equipo WHERE IdEquipo = @pIdEquipo";
                 using(SqlConnection db = new SqlConnection(_connectionString)){
-                      string sql = "SELECT * FROM Equipo WHERE IdEquipo = @pIdEquipo";
-                      miEquipo = db.QueryFirstOrDefault<Equipo>(sql, new {pIdEquipo = IdEquipo});
+                      
+                      miEquipo = db.QueryFirstOrDefault<Equipo>(sql, new{pIdEquipo = IdEquipo});
                     }
                     return miEquipo;
             }
 
             public static Jugador VerInfoJugador(int IdJugador){
 
-                Jugador miJugador = null;
+                Jugador miJugador;
                 using(SqlConnection db = new SqlConnection(_connectionString)){
                       string sql = "SELECT * FROM Jugador WHERE IdJugador = @pIdJugador";
                       miJugador = db.QueryFirstOrDefault<Jugador>(sql, new {pIdJugador = IdJugador});
