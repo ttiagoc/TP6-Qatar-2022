@@ -4,7 +4,7 @@
 
 <form method="post" Action='@Url.Action("GuardarJugador", "Home")' enctype="multipart/form-data"> 
 
-   
+     <input type="hidden" name="IdEquipo" value='@ViewBag.InfoEquipo.IdEquipo' > 
    
 
     <p>Ingresar nombre del jugador</p>
@@ -18,5 +18,13 @@
  
     <p>Ingresar una foto actual del jugador</p>
     <input type="file" name="Foto" placeholder="equipo actual..."/>
+
+<br >
+
+      <input type="submit" value="Guardar" class="btn btn-primary" style="width: 300px;">
+</div>
+
+
+    
 
 </form>
