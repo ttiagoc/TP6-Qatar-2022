@@ -60,7 +60,7 @@ public class HomeController : Controller
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
              ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
             
-                return RedirectToAction("DetalleEquipo" , "Home", new {IdEquipo = IdEquipo});
+                return RedirectToAction("VerDetalleEquipo" , "Home", new {IdEquipo = IdEquipo});
     }
 
 
