@@ -1,16 +1,22 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP6_Qatar_2022.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace TP6_Qatar_2022.Controllers;
 
 public class HomeController : Controller
 {
+
+    private IWebHostEnvironment Environment;
+
+
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IWebHostEnvironment environment)
     {
-        _logger = logger;
+        Environment = environment;
     }
 
     public IActionResult Index()
@@ -22,7 +28,7 @@ public class HomeController : Controller
     public IActionResult VerDetalleEquipo(int IdEquipo)
     {
         ViewBag.InfoEquipo = BD.VerInfoEquipo(IdEquipo);
-        //ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+        ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
         return View("DetalleEquipo");
     }
 
@@ -38,12 +44,21 @@ public class HomeController : Controller
         return View("CrearJugador");
     }
 
-    [HttpPost] IActionResult GuardarJugador(Jugador Jug){
+    [HttpPost] IActionResult GuardarJugador(Jugador Jug, IFormFile Foto){
 
+           if(Foto.Length>0){
+               string wwwRootLocal = this.environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
+               using(var stream = System.IO.File.Create(wwwRootLocal)){
+                   Foto.CopyToAsync(stream);
+               }
+           }
+           
+           
+           
             int IdEquipo = BD.AgregarJugador(Jug);
 
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-          //   ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+            ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
             
                 return View("DetalleEquipo");
     }
@@ -54,7 +69,7 @@ public class HomeController : Controller
              BD.EliminarJugador(IdJugador);
 
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-           //  ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+            ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
 
                  return View("DetalleEquipo");
     }
@@ -71,4 +86,11 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+
+ 
+
+
+
 }
+

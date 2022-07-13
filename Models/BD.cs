@@ -85,17 +85,19 @@ using Dapper;
 
                     return _ListaEquipos;
             }
-/*
+
             public static List <Jugador> ListarJugadores(int IdEquipo){
 
-                    using(SqlConnection db = new SqlConnection(_connectionString)){
-                      string sql = "SELECT * FROM Jugador WHERE IdEquipo = @pIdEquipo";
+                 string sql = "SELECT * FROM Jugador";
+
+                 using(SqlConnection db = new SqlConnection(_connectionString)){
+                     
                      _ListaJugadores = db.Query<Jugador>(sql).ToList();
                     }
 
                     return _ListaJugadores;
             }
-*/
+
 
 
 
