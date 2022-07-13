@@ -9,7 +9,7 @@ namespace TP6_Qatar_2022.Controllers;
 public class HomeController : Controller
 {
 
-    private IWebHostEnvironment Environment;
+   private IWebHostEnvironment Environment;
 
 
     private readonly ILogger<HomeController> _logger;
@@ -44,10 +44,10 @@ public class HomeController : Controller
         return View("CrearJugador");
     }
 
-    [HttpPost] IActionResult GuardarJugador(Jugador Jug, IFormFile Foto){
+    [HttpPost] public IActionResult GuardarJugador(Jugador Jug, IFormFile Foto){
 
            if(Foto.Length>0){
-               string wwwRootLocal = this.environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
+               string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
                using(var stream = System.IO.File.Create(wwwRootLocal)){
                    Foto.CopyToAsync(stream);
                }
