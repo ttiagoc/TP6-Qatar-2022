@@ -15,15 +15,15 @@ using Dapper;
             private static string _connectionString = @"Server=A-CIDI-116;
                   DataBase=Qatar2022;Trusted_Connection=True;";
 
-            public static int AgregarJugador(Jugador Jug){
+            public static void AgregarJugador(Jugador Jug){
 
-              string SQL = "INSERT INTO Jugador(Nombre, FechaNacimiento, Foto, EquipoActual) VALUES (@pNombre, @pFechaNacimiento, @pFoto, @pEquipoActual)";
+              string SQL = "INSERT INTO Jugador(IdEquipo, Nombre, FechaNacimiento, Foto, EquipoActual) VALUES (@pIdEquipo, @pNombre, @pFechaNacimiento, @pFoto, @pEquipoActual)";
 
                 using(SqlConnection db = new SqlConnection(_connectionString)){
-                    db.Execute(SQL, new {pNombre = Jug.Nombre, pFechaNacimiento = Jug.FechaNacimiento, pFoto = Jug.Foto, pEquipoActual = Jug.EquipoActual } );
+                    db.Execute(SQL, new {pIdEquipo = Jug.IdEquipo, pNombre = Jug.Nombre, pFechaNacimiento = Jug.FechaNacimiento, pFoto = Jug.Foto, pEquipoActual = Jug.EquipoActual } );
                 }
 
-                    return Jug.IdEquipo;
+                  
 
             }
 

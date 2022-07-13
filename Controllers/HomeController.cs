@@ -44,7 +44,8 @@ public class HomeController : Controller
         return View("CrearJugador");
     }
 
-    [HttpPost] public IActionResult GuardarJugador(Jugador Jug, IFormFile Foto){
+    [HttpPost] 
+    public IActionResult GuardarJugador(int IdJugador, int IdEquipo, IFormFile Foto, string Nombre, DateTime FechaNacimiento, string EquipoActual){
 
            if(Foto.Length>0){
                string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
@@ -53,12 +54,13 @@ public class HomeController : Controller
                }
            }
            
-            int IdEquipo = BD.AgregarJugador(Jug);
+           Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual);
+            BD.AgregarJugador(Jug);
 
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
              ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
             
-                return View("DetalleEquipo");
+                return RedirectToAction("DetalleEquipo" , "Home", new {IdEquipo = IdEquipo});
     }
 
 
@@ -69,7 +71,7 @@ public class HomeController : Controller
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
             ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
 
-                 return View("DetalleEquipo");
+                 return RedirectToAction("DetalleEquipo");
     }
 
 
