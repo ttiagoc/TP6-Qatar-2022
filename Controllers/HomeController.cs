@@ -35,7 +35,7 @@ public class HomeController : Controller
     public IActionResult AgregarJugador(int IdEquipo)
     {
         ViewBag.IdEquipo = IdEquipo;
-        return View("CargarJugadores");
+        return View("CrearJugador");
     }
 
     [HttpPost] IActionResult GuardarJugador(Jugador Jug){
