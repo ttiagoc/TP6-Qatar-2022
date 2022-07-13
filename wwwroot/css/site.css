@@ -19,6 +19,8 @@ body {
 }
 
 .imagen1{
-  height:"5%";
+  height:"300px";
    width:"auto";
+   display:block;
+   margin: 0 auto;
 }
