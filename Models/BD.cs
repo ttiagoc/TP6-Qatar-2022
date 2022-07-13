@@ -57,6 +57,7 @@ using Dapper;
             public static Equipo VerInfoEquipo(int IdEquipo){
 
                 Equipo miEquipo;
+              
                 string sql = "SELECT * FROM Equipo WHERE IdEquipo = @pIdEquipo";
                 using(SqlConnection db = new SqlConnection(_connectionString)){
                       
@@ -84,7 +85,7 @@ using Dapper;
 
                     return _ListaEquipos;
             }
-
+/*
             public static List <Jugador> ListarJugadores(int IdEquipo){
 
                     using(SqlConnection db = new SqlConnection(_connectionString)){
@@ -94,7 +95,7 @@ using Dapper;
 
                     return _ListaJugadores;
             }
-
+*/
 
 
 

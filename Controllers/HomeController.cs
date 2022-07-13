@@ -22,7 +22,7 @@ public class HomeController : Controller
     public IActionResult VerDetalleEquipo(int IdEquipo)
     {
         ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-        ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+        //ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
         return View("DetalleEquipo");
     }
 
@@ -43,7 +43,7 @@ public class HomeController : Controller
             int IdEquipo = BD.AgregarJugador(Jug);
 
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-             ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+          //   ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
             
                 return View("DetalleEquipo");
     }
@@ -54,7 +54,7 @@ public class HomeController : Controller
              BD.EliminarJugador(IdJugador);
 
              ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-             ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
+           //  ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
 
                  return View("DetalleEquipo");
     }
