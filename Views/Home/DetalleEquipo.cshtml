@@ -4,12 +4,34 @@
 
 
 
-
+<div class="container">
 <h1 class="Text-Center">@ViewBag.InfoEquipo.Nombre</h1>
-<img class="imagen1" src=@ViewBag.InfoEquipo.Camiseta>
+<img class="" src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
 <h1 class="Text-Center">@ViewBag.InfoEquipo.Continente</h1>
 <h1 class="Text-Center">@ViewBag.InfoEquipo.CopasGanadas</h1>
-
+</div>
 
  <a href='@Url.Action("AgregarJugador","Home", new {IdEquipo=@ViewBag.InfoEquipo.IdEquipo})'  class="btn btn-primary mt-2">Crear un Jugador</a>
  
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+     
+      <th scope="col">Jugadores de @ViewBag.InfoEquipo.Nombre</th>
+     
+    </tr>
+  </thead>
+
+   <tbody>
+       @foreach (Jugador jug in @ViewBag._ListaJugadores)
+       {
+            <tr>
+      <th scope="row">@jug.Nombre</th>
+      <td>@jug.EquipoActual</td>
+     <td><a href='@Url.Action("DetalleJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Detalle</a></td>
+    </tr>
+    
+       }
+   
+  </tbody>
+</table>
