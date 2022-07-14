@@ -18,9 +18,9 @@ body {
   margin-bottom: 60px;
 }
 
-.imagen1{
-  height:"300px";
-   width:"auto";
-   display:block;
-   margin: 0 auto;
+.fondo{
+  background-image: "/Imagenes/fondo.png";
+  background-position:center;
+  background-attachment:fixed;
+
 }
