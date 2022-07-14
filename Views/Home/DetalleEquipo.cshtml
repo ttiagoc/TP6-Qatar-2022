@@ -25,12 +25,15 @@
    <tbody>
        @foreach (Jugador jug in @ViewBag._ListaJugadores)
        {
+        
+           if(@jug.IdEquipo == ViewBag.InfoEquipo.IdEquipo){
             <tr>
       <th scope="row">@jug.Nombre</th>
-      <td>@jug.EquipoActual</td>
+     
      <td><a href='@Url.Action("VerDetalleJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Detalle</a></td>
+     <td><a href='@Url.Action("EliminarJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Eliminar</a></td>
     </tr>
-    
+       }
        }
    
   </tbody>

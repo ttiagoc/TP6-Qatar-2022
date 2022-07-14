@@ -45,7 +45,7 @@ using Dapper;
 
              public static int EliminarJugador(int JugadorAEliminar){
                  int jugadoresEliminados = 0;
-                 string sql = "DELETE FROM Jugador WHERE Jugador = @jJugador";
+                 string sql = "DELETE FROM Jugador WHERE IdJugador = @jJugador";
                     using(SqlConnection db = new SqlConnection(_connectionString)){
                       jugadoresEliminados = db.Execute(sql, new {jJugador = JugadorAEliminar} );
                     }
