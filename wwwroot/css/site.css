@@ -30,3 +30,28 @@ nav{
   background-attachment:fixed;
 
 }
+
+
+.hero-image {
+  
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/Imagenes/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 300px;
+}
+
+.blanco{
+  color: white;
+  
+}
+
+@font-face {
+  font-family: fuente1;
+  src: url('/letraQatar.otf') format('truetype');
+}
+
+*{
+  font-family: fuente1;
+}

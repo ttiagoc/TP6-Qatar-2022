@@ -5,10 +5,10 @@
 
 
 <div class="container">
-<h1 class="Text-Center">@ViewBag.InfoEquipo.Nombre</h1>
-<img class="" src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
-<h1 class="Text-Center">@ViewBag.InfoEquipo.Continente</h1>
-<h1 class="Text-Center">@ViewBag.InfoEquipo.CopasGanadas</h1>
+<h1 class="blanco">@ViewBag.InfoEquipo.Nombre</h1>
+<img src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
+<h1 class="blanco">@ViewBag.InfoEquipo.Continente</h1>
+<h1 class="blanco">@ViewBag.InfoEquipo.CopasGanadas</h1>
 </div>
 
  <a href='@Url.Action("AgregarJugador","Home", new {IdEquipo=@ViewBag.InfoEquipo.IdEquipo})'  class="btn btn-primary mt-2">Crear un Jugador</a>
