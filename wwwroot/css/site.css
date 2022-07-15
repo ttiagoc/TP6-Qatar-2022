@@ -16,10 +16,16 @@ html {
 
 body {
   margin-bottom: 60px;
+  
+ background-image: url("/Imagenes/fondo.png");
+  background-position:center;
+  background-attachment:fixed;
+
+
 }
 
-.fondo{
-  background-image: "/Imagenes/fondo.png";
+nav{
+  background-image: url("/Imagenes/fondo.png");
   background-position:center;
   background-attachment:fixed;
 

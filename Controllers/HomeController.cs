@@ -57,9 +57,7 @@ public class HomeController : Controller
            Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual);
             BD.AgregarJugador(Jug);
 
-            // ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-           //  ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
-            
+          
                 return RedirectToAction("VerDetalleEquipo" , "Home", new {IdEquipo = IdEquipo});
     }
 
@@ -68,10 +66,7 @@ public class HomeController : Controller
 
              BD.EliminarJugador(IdJugador);
 
-           //  ViewBag.miEquipo = BD.VerInfoEquipo(IdEquipo);
-           // ViewBag._ListaJugadores = BD.ListarJugadores(IdEquipo);
-
-                return RedirectToAction("VerDetalleEquipo" , "Home", new {IdEquipo = IdEquipo});
+             return RedirectToAction("VerDetalleEquipo" , "Home", new {IdEquipo = IdEquipo});
     }
 
 

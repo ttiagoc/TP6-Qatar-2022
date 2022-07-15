@@ -46,3 +46,11 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+
+.fondo{
+  background-color: rgb(000000);
+  background-position:center;
+  background-attachment:fixed;
+
+}
