@@ -55,3 +55,24 @@ nav{
 *{
   font-family: fuente1;
 }
+
+.informacion{
+  width: 600px;
+  height: auto;
+ 
+}
+
+.imag{
+  width: 300px;
+ 
+  margin-left: 500px;
+}
+
+.marroncito{
+  color: darkkhaki;
+}
+
+.redondeado{
+  border-radius: 20px;
+}
+

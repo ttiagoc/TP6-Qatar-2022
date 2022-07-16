@@ -4,11 +4,14 @@
 
 
 
-<div class="container">
-<h1 class="blanco">@ViewBag.InfoEquipo.Nombre</h1>
+<div class="container informacion">
+<h1 class="marroncito text-center">@ViewBag.InfoEquipo.Nombre</h1>
+
+<h1 class="marroncito text-center"> Continente:@ViewBag.InfoEquipo.Continente</h1>
+<h1 class="marroncito text-center">    Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h1>
+</div>
+<div class="imag">
 <img src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
-<h1 class="blanco">@ViewBag.InfoEquipo.Continente</h1>
-<h1 class="blanco">@ViewBag.InfoEquipo.CopasGanadas</h1>
 </div>
 
  <a href='@Url.Action("AgregarJugador","Home", new {IdEquipo=@ViewBag.InfoEquipo.IdEquipo})'  class="btn btn-primary mt-2">Crear un Jugador</a>
