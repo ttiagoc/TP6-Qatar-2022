@@ -83,9 +83,35 @@ public class HomeController : Controller
     }
 
 
- 
+     
+     [HttpPost] 
+    public IActionResult GuardarEquipo(int IdEquipo,string Nombre, IFormFile Escudo, IFormFile Camiseta, string Continente, int CopasGanadas){
 
+           if(Escudo.Length>0){
+               string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\Imagenes\" + Escudo.FileName;
+               using(var stream = System.IO.File.Create(wwwRootLocal)){
+                   Escudo.CopyToAsync(stream);
+               }
+           }
+              if(Camiseta.Length>0){
+               string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\Imagenes\" + Camiseta.FileName;
+               using(var stream = System.IO.File.Create(wwwRootLocal)){
+                   Camiseta.CopyToAsync(stream);
+               }
+           }
+           
+           Equipo Eq = new Equipo(Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas);
+            BD.AgregarEquipo(Eq);
 
+          
+                return RedirectToAction("Index" , "Home");
+    }
+
+      public IActionResult AgregarEquipo()
+    {
+       
+        return View("CrearEquipo");
+    }
 
 }
 

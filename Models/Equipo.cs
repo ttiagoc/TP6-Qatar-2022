@@ -15,9 +15,9 @@ using System.Web;
     private string _continente = "";
     private  int _copasGanadas;
 
-    public Equipo ( string pnombre, string pescudo, string pcamiseta, string pcontinente, int pcopasGanadas){
+    public Equipo (int pIdEquipo, string pnombre, string pescudo, string pcamiseta, string pcontinente, int pcopasGanadas){
 
-       
+       _idEquipo = pIdEquipo;
         _nombre = pnombre;
         _escudo = pescudo;
         _camiseta = pcamiseta;
