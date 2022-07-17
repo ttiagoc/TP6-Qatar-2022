@@ -100,7 +100,7 @@ public class HomeController : Controller
                }
            }
            
-           Equipo Eq = new Equipo(Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas);
+           Equipo Eq = new Equipo(IdEquipo,Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas);
             BD.AgregarEquipo(Eq);
 
           

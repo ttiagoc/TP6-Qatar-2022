@@ -27,7 +27,7 @@ using System.Web;
 
     public Equipo(){
 
-        
+        _idEquipo = 0;
         _nombre = "Sin nombre aún";
         _escudo = "Sin escudo aún";
         _camiseta = "Sin camiseta aún";

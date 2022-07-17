@@ -79,3 +79,14 @@ nav{
 .opacidad{
   opacity: 50;
 }
+
+.sd{
+  text-decoration: none;
+}
+
+.nomCards{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  color: black;
+} 
