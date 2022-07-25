@@ -90,3 +90,7 @@ nav{
   width: 100%;
   color: black;
 } 
+
+.decoracion{
+  text-decoration: none;
+}

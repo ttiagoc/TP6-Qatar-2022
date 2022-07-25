@@ -19,29 +19,33 @@
 
 
 
-
+<div class="container">
 <h1 class="text-center blanco pt-5 pb-5 text-decoration-underline">EQUIPOS CLASIFICADOS</h1>
+</div>
 
 
 
+<div class="container m-auto">
+  <div class="row">
+    @foreach (Equipo eq2 in ViewBag._ListaEquipos)
+    {
 
-
-<div class="row">
-@foreach (Equipo eq2 in ViewBag._ListaEquipos)
-{
-
-    <div class="col">
-    <div class="card redondeado" style="width: 18rem;">
+     <div class="col">
+       <div class="card redondeado m-auto" style="width: 18rem;">
            <a href='@Url.Action("VerDetalleEquipo","Home", new {IdEquipo=eq2.IdEquipo})' ><img class="card-img-top " src="@eq2.Escudo" alt="Card image cap"></a> 
-         <div class="card-body">
+          <div class="card-body">
             
           
             <a class="sd h4 nomCards" href='@Url.Action("VerDetalleEquipo","Home", new {IdEquipo=eq2.IdEquipo})' > @eq2.Nombre </a>
         
-    </div>
-    </div>
-       </div>
-}</div>
+          </div>
+        </div>
+     </div>
+       
+    }  
+  </div>
+</div>
 
-
-       <a href='@Url.Action("AgregarEquipo","Home")'  class="btn btn-primary mt-2">Crear un Equipo</a>
+<div class="text-center pt-5">
+  <a href='@Url.Action("AgregarEquipo","Home")'  class="btn btn-primary mt-2">Crear Equipo</a>
+</div>
