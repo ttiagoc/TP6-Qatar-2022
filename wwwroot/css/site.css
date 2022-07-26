@@ -62,11 +62,7 @@ nav{
  
 }
 
-.imag{
-  width: 300px;
- 
-  margin-left: 500px;
-}
+
 
 .marroncito{
   color: darkkhaki;
@@ -94,3 +90,92 @@ nav{
 .decoracion{
   text-decoration: none;
 }
+
+.transparencia:hover{
+   filter: opacity(.5);
+}
+
+.rotar:hover {
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;}
+
+  
+  .vuelta:hover{
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    box-shadow: 0px 0px 15px 15px #ec731e;
+    -webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    }
+
+    table {
+      text-align: left;
+      line-height: 40px;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 2px solid rgb(142,20,57);
+      width: 500px;
+      margin: 50px auto;
+      border-radius: .25rem;
+    }
+    
+    thead tr:first-child {
+      background:rgb(142,20,57);
+      color: #fff;
+      border: none;
+    }
+    
+    th:first-child,
+    td:first-child {
+      padding: 0 15px 0 20px;
+    }
+    
+    th {
+     font-weight: 500;
+    }
+    
+    thead tr:last-child th {
+      border-bottom: 3px solid #ddd;
+    }
+    
+   
+    
+    tbody tr:last-child td {
+      border: none;
+    }
+    
+    tbody td {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    td:last-child {
+      text-align: right;
+      padding-right: 10px;
+    }
+    
+    .button {
+      color: #aaa;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-top: -4px;
+    }
+    
+    .edit:hover {
+      color: #0a79df;
+    }
+
+    .edit {
+      color: #0a79df;
+    }
+    
+    
+    .delete:hover {
+      color: #dc2a2a;
+    }
+
+    .delete{
+      color:red;
+    }
