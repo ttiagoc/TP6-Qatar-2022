@@ -2,13 +2,14 @@
     ViewData["Title"] = "DetalleEquipo";
 }
 
-
+ <a href='@Url.Action("Index","Home")'  class="btn btn-primary mt-2">Atras</a>
 
 <div class="container informacion">
 
     <h1 class="marroncito text-center display-1">@ViewBag.InfoEquipo.Nombre</h1>
-    <h2 class="marroncito text-center">Continente:@ViewBag.InfoEquipo.Continente</h1>
-    <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h1>
+    <h2 class="marroncito text-center">Continente:@ViewBag.InfoEquipo.Continente</h2>
+    <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h2>
+   <h2 class="text-center"><a class="marroncito" href="@ViewBag.InfoEquipo.PagOficial" target="_blank">Página oficial</a></h2>
 
   <div class="text-center">
     <img class="rotar" src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
@@ -24,7 +25,7 @@
   <table>
   <thead>
     <tr>
-      <th colspan="3">Jugadores de @ViewBag.InfoEquipo.Nombre</th>
+      <th class="text-center" colspan="3">Jugadores de @ViewBag.InfoEquipo.Nombre</th>
     </tr>
    
   </thead>

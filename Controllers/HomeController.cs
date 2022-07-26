@@ -85,7 +85,7 @@ public class HomeController : Controller
 
      
      [HttpPost] 
-    public IActionResult GuardarEquipo(int IdEquipo,string Nombre, IFormFile Escudo, IFormFile Camiseta, string Continente, int CopasGanadas){
+    public IActionResult GuardarEquipo(int IdEquipo,string Nombre, IFormFile Escudo, IFormFile Camiseta, string Continente, int CopasGanadas, string PagOficial){
 
            if(Escudo.Length>0){
                string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\Imagenes\" + Escudo.FileName;
@@ -100,7 +100,7 @@ public class HomeController : Controller
                }
            }
            
-           Equipo Eq = new Equipo(IdEquipo,Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas);
+           Equipo Eq = new Equipo(IdEquipo,Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas, PagOficial);
             BD.AgregarEquipo(Eq);
 
           
