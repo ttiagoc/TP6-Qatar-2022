@@ -13,9 +13,8 @@ using System.Web;
          private DateTime _fechaNacimiento;
          private string _foto = "";
          private string _equipoActual = "";
-
-
-     public Jugador (int pidJugador, int pidEquipo, string pnombre, DateTime pfechaNacimiento, string pfoto, string pequipoActual){
+        private int _numCamiseta;
+     public Jugador (int pidJugador, int pidEquipo, string pnombre, DateTime pfechaNacimiento, string pfoto, string pequipoActual, int pNumCamiseta){
 
         _idJugador = pidJugador;
         _idEquipo = pidEquipo;
@@ -23,6 +22,7 @@ using System.Web;
         _fechaNacimiento = pfechaNacimiento;
         _foto = pfoto;
         _equipoActual = pequipoActual;
+        _numCamiseta = pNumCamiseta;
      }
 
       public Jugador(){
@@ -33,6 +33,7 @@ using System.Web;
           _fechaNacimiento = new DateTime(1111,11,11);
           _foto = "Sin foto";
           _equipoActual = "Sin equipo";
+          _numCamiseta = 0;
       }
 
        public int IdJugador{
@@ -71,7 +72,10 @@ using System.Web;
          set{_equipoActual = value;}
       }
 
-
+      public int NumCamiseta{
+         get{return _numCamiseta;}
+         set{_numCamiseta = value;}
+      }
 
   }
 

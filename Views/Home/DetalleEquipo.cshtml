@@ -2,6 +2,7 @@
     ViewData["Title"] = "DetalleEquipo";
 }
 
+
  <a href='@Url.Action("Index","Home")'  class="btn btn-primary mt-2">Atras</a>
 
 <div class="container informacion">
@@ -10,7 +11,11 @@
     <h2 class="marroncito text-center">Continente:@ViewBag.InfoEquipo.Continente</h2>
     <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h2>
    <h2 class="text-center"><a class="marroncito" href="@ViewBag.InfoEquipo.PagOficial" target="_blank">Página oficial</a></h2>
-
+   
+<div class="embed-responsive embed-responsive-16by9">
+<video class="embed-responsive-item" width="560" height="315" src="@ViewBag.InfoEquipo.Video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></video>
+</div>
+     
   <div class="text-center">
     <img class="rotar" src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
   </div>

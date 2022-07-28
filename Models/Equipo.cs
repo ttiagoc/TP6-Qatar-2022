@@ -14,9 +14,9 @@ using System.Web;
     private string _camiseta = "";
     private string _continente = "";
     private  int _copasGanadas;
-
     private string _pagOficial;
-    public Equipo (int pIdEquipo, string pnombre, string pescudo, string pcamiseta, string pcontinente, int pcopasGanadas, string pPagOficial){
+    private string _video = "";
+    public Equipo (int pIdEquipo, string pnombre, string pescudo, string pcamiseta, string pcontinente, int pcopasGanadas, string pPagOficial, string pVideo){
 
        _idEquipo = pIdEquipo;
         _nombre = pnombre;
@@ -25,6 +25,7 @@ using System.Web;
         _continente = pcontinente;
         _copasGanadas = pcopasGanadas;
         _pagOficial = pPagOficial;
+        _video = pVideo;
     }
 
     public Equipo(){
@@ -36,7 +37,7 @@ using System.Web;
         _continente = "Sin continente aún";
         _copasGanadas = 0;
         _pagOficial = "Sin página aún";
-
+        _video = "Sin video aún";
     }
 
       public int IdEquipo{
@@ -74,6 +75,10 @@ using System.Web;
     set{_pagOficial = value;}
   }
 
+   public string Video{
+    get{return _video;}
+    set{_video = value;}
+  }
 }
 
 }

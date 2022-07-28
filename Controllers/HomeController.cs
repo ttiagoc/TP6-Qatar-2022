@@ -45,7 +45,7 @@ public class HomeController : Controller
     }
 
     [HttpPost] 
-    public IActionResult GuardarJugador(int IdJugador, int IdEquipo, IFormFile Foto, string Nombre, DateTime FechaNacimiento, string EquipoActual){
+    public IActionResult GuardarJugador(int IdJugador, int IdEquipo, IFormFile Foto, string Nombre, DateTime FechaNacimiento, string EquipoActual, int NumCamiseta){
 
            if(Foto.Length>0){
                string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\Imagenes\" + Foto.FileName;
@@ -54,7 +54,7 @@ public class HomeController : Controller
                }
            }
            
-           Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual);
+           Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual, NumCamiseta);
             BD.AgregarJugador(Jug);
 
           
@@ -85,7 +85,7 @@ public class HomeController : Controller
 
      
      [HttpPost] 
-    public IActionResult GuardarEquipo(int IdEquipo,string Nombre, IFormFile Escudo, IFormFile Camiseta, string Continente, int CopasGanadas, string PagOficial){
+    public IActionResult GuardarEquipo(int IdEquipo,string Nombre, IFormFile Escudo, IFormFile Camiseta, string Continente, int CopasGanadas, string PagOficial, string Video){
 
            if(Escudo.Length>0){
                string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\Imagenes\" + Escudo.FileName;
@@ -100,7 +100,7 @@ public class HomeController : Controller
                }
            }
            
-           Equipo Eq = new Equipo(IdEquipo,Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas, PagOficial);
+           Equipo Eq = new Equipo(IdEquipo,Nombre,("/" + Escudo.FileName),("/" + Camiseta.FileName),Continente, CopasGanadas, PagOficial, Video);
             BD.AgregarEquipo(Eq);
 
           
