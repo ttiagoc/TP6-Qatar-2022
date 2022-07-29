@@ -54,6 +54,8 @@ public class HomeController : Controller
                }
            }
            
+           
+
            Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual, NumCamiseta);
             BD.AgregarJugador(Jug);
 
