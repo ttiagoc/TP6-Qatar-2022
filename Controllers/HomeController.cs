@@ -53,7 +53,7 @@ public class HomeController : Controller
                    Foto.CopyToAsync(stream);
                }
            }
-           
+           /*
            List<Jugador> listaJugadores = new List<Jugador>();
            listaJugadores = BD.ListarJugadores(IdEquipo);
            int numeroRep = -1;
@@ -64,10 +64,10 @@ public class HomeController : Controller
             {
                 numeroRep = 1;
                 ViewBag.numeroRep = numeroRep;
-               
+               pattern="ViewBag.numeroRep == -1"
             }
            }
-
+*/
            Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual, NumCamiseta);
             BD.AgregarJugador(Jug);
 

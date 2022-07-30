@@ -6,14 +6,17 @@
  <a href='@Url.Action("Index","Home")'  class="btn btn-primary mt-2">Atras</a>
 
 <div class="container informacion">
-
+    <div class="text-center">
+      <img class="saturado" src= @ViewBag.InfoEquipo.Escudo  width="auto" height="160px"> 
+      </div>
     <h1 class="marroncito text-center display-1">@ViewBag.InfoEquipo.Nombre</h1>
-    <h2 class="marroncito text-center">Continente:@ViewBag.InfoEquipo.Continente</h2>
+    <h2 class="marroncito text-center">Continente: @ViewBag.InfoEquipo.Continente</h2>
     <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h2>
-   <h2 class="text-center"><a class="marroncito" href="@ViewBag.InfoEquipo.PagOficial" target="_blank">Página oficial</a></h2>
-   
+    <div class="text-center">
+    <h2 class="text-center pagina"><a class="marroncito" href="@ViewBag.InfoEquipo.PagOficial" target="_blank">Página oficial</a></h2>
+    </div>
 
-<iframe class="embed-responsive-item" width="560" height="315" src="@ViewBag.InfoEquipo.Video" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<iframe class="embed-responsive-item pt-4" width="560" height="315" src="@ViewBag.InfoEquipo.Video" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
      
   <div class="text-center">

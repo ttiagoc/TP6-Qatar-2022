@@ -183,3 +183,49 @@ nav{
     .sombra{
       box-shadow: 0px 5px 5px black;
     }
+    
+
+.saturado:hover 
+{filter: saturate(180%);}
+
+
+
+.pagina {
+  background-image: linear-gradient(
+    to right,
+    white,
+    #54b3d6 50%,
+    darkkhaki 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.pagina:before {
+  
+  content: '';
+  background: darkkhaki;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+.pagina:hover {
+  
+ background-position: 0;
+}
+
+.pagina:hover::before {
+  width:100%;
+}
