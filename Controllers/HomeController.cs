@@ -54,7 +54,19 @@ public class HomeController : Controller
                }
            }
            
-           
+           List<Jugador> listaJugadores = new List<Jugador>();
+           listaJugadores = BD.ListarJugadores(IdEquipo);
+           int numeroRep = -1;
+           ViewBag.numeroRep = numeroRep;
+           foreach(Jugador jug in listaJugadores)
+           {
+            if(jug.NumCamiseta == NumCamiseta)
+            {
+                numeroRep = 1;
+                ViewBag.numeroRep = numeroRep;
+               
+            }
+           }
 
            Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual, NumCamiseta);
             BD.AgregarJugador(Jug);
@@ -114,6 +126,26 @@ public class HomeController : Controller
        
         return View("CrearEquipo");
     }
+
+/*
+    public void SeRepite(int IdEquipo, int NumCamiseta){
+
+
+          List<Jugador> listaJugadores = new List<Jugador>();
+           listaJugadores = BD.ListarJugadores(IdEquipo);
+           int numeroRep = -1;
+           ViewBag.numeroRep = numeroRep;
+           foreach(Jugador jug in listaJugadores)
+           {
+            if(jug.NumCamiseta == NumCamiseta)
+            {
+                numeroRep = 1;
+                ViewBag.numeroRep = numeroRep;
+                
+            }
+           }
+    }
+*/
 
 }
 

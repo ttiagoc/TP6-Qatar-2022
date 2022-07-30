@@ -180,4 +180,6 @@ nav{
       color:red;
     }
 
-    
+    .sombra{
+      box-shadow: 0px 5px 5px black;
+    }
