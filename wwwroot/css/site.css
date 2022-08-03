@@ -289,3 +289,20 @@ nav{
 .modal p + p {
   margin-top: 1rem;
 }
+
+.zoom {
+  transition: transform .2s; 
+}
+
+.zoom:hover {
+  transform: scale(1.5); 
+}
+
+@media (max-width: 768px) {
+ 
+    .vid{
+      width: auto;
+    }
+   
+  
+}

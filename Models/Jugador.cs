@@ -13,7 +13,7 @@ using System.Web;
          private DateTime _fechaNacimiento;
          private string _foto = "";
          private string _equipoActual = "";
-        private int _numCamiseta;
+         private int _numCamiseta;
      public Jugador (int pidJugador, int pidEquipo, string pnombre, DateTime pfechaNacimiento, string pfoto, string pequipoActual, int pNumCamiseta){
 
         _idJugador = pidJugador;
