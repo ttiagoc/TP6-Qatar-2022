@@ -47,11 +47,16 @@
                     
              <div class="col-sm-12">
                 <div class="form-group">
-                  <div class="input-group"> <input class="form-control" autocomplete="off" type="text"  title="El número de camiseta ya es usado por otro jugador" required placeholder="Número de camiseta" name="NumCamiseta"> </div>
+                  <div class="input-group"> <input class="form-control" autocomplete="off" type="number" required placeholder="Número de camiseta" name="NumCamiseta"> </div>
              </div>
            </div>
         </div>
            
+                    @if(ViewBag.numeroRep == 1){
+                        <h5 class="text-warning">El número de camiseta ya fue usado, ingrese de nuevo</h5>
+                    }
+
+
 
                      <input type="submit" value="Guardar" class="btn btn-primary" style="width: 300px;">
                       <input type="reset" value="Restablecer" class="btn btn-danger"  style="width: 300px;">
