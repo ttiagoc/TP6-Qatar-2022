@@ -4,12 +4,14 @@
 
 <a href='@Url.Action("VerDetalleEquipo","Home", new {IdEquipo=@ViewBag.miJugador.IdEquipo})' class="btn btn-primary mt-2">Atras</a>
 
-<div class="container informacion">
+<div class="container informacion2">
 
     <h1 class="marroncito text-center display-1">@ViewBag.miJugador.Nombre</h1>
-    <img class="vuelta" src=@ViewBag.miJugador.Foto width="auto" height="300px">
-    <h2 class="marroncito text-center pt-3">@ViewBag.miJugador.FechaNacimiento</h1>
-    <h2 class="marroncito text-center pt-3">@ViewBag.miJugador.EquipoActual</h1>
+    <div class="text-center">
+        <img class="redondeado" src=@ViewBag.miJugador.Foto width="auto" height="250px">
+    </div>
+    <h2 class="marroncito text-center pt-3">Fecha de nacimiento: @ViewBag.miJugador.FechaNacimiento</h2>
+    <h2 class="marroncito text-center pt-3">Equipo actual: @ViewBag.miJugador.EquipoActual</h2>
     <h2 class="marroncito text-center pt-3">Número de camiseta: @ViewBag.miJugador.NumCamiseta</h2>
     
     

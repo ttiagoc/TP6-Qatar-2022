@@ -71,8 +71,10 @@ public class HomeController : Controller
                
             }
            }
+
+           string fechaCorta = FechaNacimiento.ToShortDateString();
         
-           Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,FechaNacimiento,("/" + Foto.FileName),EquipoActual, NumCamiseta);
+           Jugador Jug = new Jugador(IdJugador,IdEquipo,Nombre,fechaCorta,("/" + Foto.FileName),EquipoActual, NumCamiseta);
             BD.AgregarJugador(Jug);
 
           

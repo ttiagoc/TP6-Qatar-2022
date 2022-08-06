@@ -10,11 +10,11 @@ using System.Web;
          private int _idJugador;
          private int _idEquipo;
          private string _nombre = "";
-         private DateTime _fechaNacimiento;
+         private string _fechaNacimiento;
          private string _foto = "";
          private string _equipoActual = "";
          private int _numCamiseta;
-     public Jugador (int pidJugador, int pidEquipo, string pnombre, DateTime pfechaNacimiento, string pfoto, string pequipoActual, int pNumCamiseta){
+     public Jugador (int pidJugador, int pidEquipo, string pnombre, string pfechaNacimiento, string pfoto, string pequipoActual, int pNumCamiseta){
 
         _idJugador = pidJugador;
         _idEquipo = pidEquipo;
@@ -30,7 +30,7 @@ using System.Web;
           _idJugador = 0;
           _idEquipo = 0;
           _nombre = "Sin nombre";
-          _fechaNacimiento = new DateTime(1111,11,11);
+          _fechaNacimiento = "";
           _foto = "Sin foto";
           _equipoActual = "Sin equipo";
           _numCamiseta = 0;
@@ -54,7 +54,7 @@ using System.Web;
           set{_nombre = value;}
        }
 
-      public DateTime FechaNacimiento{
+      public string FechaNacimiento{
 
         get{return _fechaNacimiento;}
         set{_fechaNacimiento = value;}
