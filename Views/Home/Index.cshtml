@@ -32,7 +32,7 @@
 
      <div class="col">
        <div class="card redondeado m-auto sombra mb-4" style="width: 18rem;">
-           <a href='@Url.Action("VerDetalleEquipo","Home", new {IdEquipo=eq2.IdEquipo})' ><img class="card-img-top transparencia" src="@eq2.Escudo" alt="Card image cap"></a> 
+           <a href='@Url.Action("VerDetalleEquipo","Home", new {IdEquipo=eq2.IdEquipo , IdJugador = 0})' ><img class="card-img-top transparencia" src="@eq2.Escudo" alt="Card image cap"></a> 
           <div class="card-body">
             
           
@@ -50,4 +50,102 @@
   <a href='@Url.Action("AgregarEquipo","Home")'  class="btn btn-primary mt-2">Crear Equipo</a>
 </div>
 
+<div class="text-center">
+ <button type="button" class="open-modal" data-open="modal1">
+    Crear Equipo
+  </button>
+</div>
 
+
+
+  <div class="modal" id="modal1" data-animation="slideInOutLeft">
+  <div class="modal-dialog">
+    <header class="modal-header">
+      
+      <button class="close-modal" aria-label="close modal" data-close>
+        ✕  
+      </button>
+    </header>
+    <section class="modal-content">
+
+        <form method="post" Action='@Url.Action("GuardarEquipo", "Home")' enctype="multipart/form-data"> 
+    <div class="container mt-5 mb-5 d-flex justify-content-center ">
+         <div class="card px-1 py-4">
+            <div class="card-body">
+                <h6 class="card-title mb-4 text-center h3">Crear equipo</h6>
+                
+            
+         <div class="row mb-3">
+            <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Nombre" autocomplete="off"name="Nombre" required> </div>
+                </div>
+            </div>
+
+                    
+                    <p class="text-center">Escudo del equipo</p>
+
+
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="input-group"> <input class="form-control" type="file" autocomplete="off" required placeholder="Escudo" name="Escudo"> </div>
+              </div>
+          </div>
+      </div>
+
+            
+                    <p class="text-center">Camiseta del equipo</p>
+
+
+          <div class="row mb-3">
+             <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="input-group"> <input class="form-control" autocomplete="off" type="file" required placeholder="Camiseta" name="Camiseta"> </div>
+             </div>
+           </div>
+        </div>
+            <div class="row mb-3">
+             <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="input-group"> <input class="form-control" autocomplete="off" type="text" required placeholder="Continente" name="Continente"> </div>
+             </div>
+           </div>
+        </div>
+
+        <div class="row mb-3">
+             <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="input-group"> <input class="form-control" autocomplete="off" type="number" required placeholder="Copas ganadas" name="CopasGanadas"> </div>
+             </div>
+           </div>
+        </div>
+             <div class="row mb-3">
+             <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="input-group"> <input class="form-control" autocomplete="off" type="text" required placeholder="Link a página oficial" name="PagOficial"> </div>
+             </div>
+           </div>
+        </div>
+           <div class="row mb-3">
+             <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="input-group"> <input class="form-control" autocomplete="off" type="text" required placeholder="Link a video" name="Video"> </div>
+             </div>
+           </div>
+        </div>
+
+                     <input type="submit" value="Guardar" class="btn btn-primary" style="width: 300px;">
+                      <input type="reset" value="Restablecer" class="btn btn-danger"  style="width: 300px;">
+                     </div>
+               </div>
+        </form>
+
+
+
+
+
+       </section>
+    
+  </div>
+</div>
