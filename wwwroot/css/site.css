@@ -278,12 +278,15 @@ nav{
   visibility: hidden;
   opacity: 0;
   transition: all 0.35s ease-in;
+  
 }
 
 .modal.is-visible {
   visibility: visible;
   opacity: 1;
+
 }
+
 
 .modal-dialog {
   
@@ -294,6 +297,7 @@ nav{
   background: var(--white);
   overflow: auto;
   cursor: default;
+ 
 }
 
 .modal-dialog > * {
@@ -303,22 +307,62 @@ nav{
 .modal-header
  {
   background: white;
+  height: 40x;
   
+}
 
+.cruz{
+  height: 15px;
+  
 }
 
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-image: url("/Imagenes/fondo.png");
 }
 
 .modal-header .close-modal {
   font-size: 1.5rem;
   
+ 
+
 }
 
 .modal p + p {
   margin-top: 1rem;
 }
+
+#modal1{
+  background-color: rgba(0,0,0, 0.5) !important;
+}
+
+.modal-content{
+  background-image: url("/Imagenes/fondo.png");
+}
+
+.color{
+  background-image: url("/Imagenes/fondo.png");
+}
+
+.borde1{
+  border-left: 2px;
+  border-top: 2px;
+  border-right: 2px;
+}
+
+.borde2{
+
+  border-left: 2px;
+  border-bottom: 2px;
+   border-right: 2px;
+
+
+}
+
+
+
+
+
 
