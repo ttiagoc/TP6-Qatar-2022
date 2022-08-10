@@ -29,10 +29,10 @@ using Dapper;
 
              public static void AgregarEquipo(Equipo Eq){
 
-              string SQL = "INSERT INTO Equipo(Nombre, Escudo, Camiseta, Continente, CopasGanadas, PagOficial) VALUES (@pNombre, @pEscudo, @pCamiseta, @pCamiseta, @pCopasGanadas, @pPagOficial)";
+              string SQL = "INSERT INTO Equipo(Nombre, Escudo, Camiseta, Continente, CopasGanadas, PagOficial, Video) VALUES (@pNombre, @pEscudo, @pCamiseta, @pContinente, @pCopasGanadas, @pPagOficial, @pVideo)";
 
                 using(SqlConnection db = new SqlConnection(_connectionString)){
-                    db.Execute(SQL, new {pNombre = Eq.Nombre, pEscudo = Eq.Escudo, pCamiseta = Eq.Camiseta, pContinente = Eq.Continente, pCopasGanadas = Eq.CopasGanadas, pPagOficial = Eq.PagOficial } );
+                    db.Execute(SQL, new {pNombre = Eq.Nombre, pEscudo = Eq.Escudo, pCamiseta = Eq.Camiseta, pContinente = Eq.Continente, pCopasGanadas = Eq.CopasGanadas, pPagOficial = Eq.PagOficial, pVideo = Eq.Video} );
                 }
 
                    
