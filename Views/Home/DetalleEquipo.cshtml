@@ -5,110 +5,105 @@
 
  <a href='@Url.Action("Index","Home")'  class="btn btn-primary mt-2">Atras</a>
 
-<div class="container informacion">
+  <div class="container informacion">
   
-    <div class="text-center">
-      <img class="saturado zoom" src= @ViewBag.InfoEquipo.Escudo  width="auto" height="160px"> 
+      <div class="text-center">
+        <img class="saturado zoom" src= @ViewBag.InfoEquipo.Escudo  width="auto" height="160px"> 
       </div>
   
-    <h1 class="marroncito text-center display-1">@ViewBag.InfoEquipo.Nombre</h1>
-    <h2 class="marroncito text-center">Continente: @ViewBag.InfoEquipo.Continente</h2>
-    <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h2>
-    <div class="text-center">
-    <h2 class="text-center pagina"><a class="marroncito" href="@ViewBag.InfoEquipo.PagOficial" target="_blank">Página oficial</a></h2>
-    </div>
+        <h1 class="marroncito text-center display-1">@ViewBag.InfoEquipo.Nombre</h1>
+        <h2 class="marroncito text-center">Continente: @ViewBag.InfoEquipo.Continente</h2>
+        <h2 class="marroncito text-center">Copas ganadas: @ViewBag.InfoEquipo.CopasGanadas</h2>
+     <div class="text-center">
+        <h2 class="text-center pagina"><a class="marroncito" href="@ViewBag.InfoEquipo.PagOficial" target="_blank">Página oficial</a></h2>
+     </div>
 
-<iframe class="embed-responsive-item pt-4 vid" width="560" height="315" src="@ViewBag.InfoEquipo.Video" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item pt-4 vid" width="560" height="315" src="@ViewBag.InfoEquipo.Video" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
      
-  <div class="text-center">
-    <img class="rotar pt-3" src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
+      <div class="text-center">
+        <img class="rotar pt-3" src=@ViewBag.InfoEquipo.Camiseta width="auto" height="300px">
+      </div>
+
   </div>
-</div>
 
 
     <div class="text-center pt-5">
- <button type="button" class="open-modal btn btn-primary" data-open="modal1">
-    Crear un jugador
-  </button>
-</div>
-
-
+        <button type="button" class="open-modal btn btn-primary" data-open="modal1">
+        Crear un jugador
+        </button>
+    </div>
 
 
     <div class="modal" id="modal1" data-animation="slideInOutLeft">
-  <div class="modal-dialog">
-    <header class="modal-header borde1">
+      <div class="modal-dialog">
+          <header class="modal-header borde1">
       
-      <button class="close-modal" aria-label="close modal" data-close>
-        ✕  
-      </button>
-    </header>
+            <button class="close-modal" aria-label="close modal" data-close>
+                 ✕  
+            </button>
+        </header>
+
     <section class="modal-content borde2">
 
         <form class="color" method="post" Action='@Url.Action("GuardarJugador", "Home")' enctype="multipart/form-data"> 
-    <div class="container mt-5 mb-5 d-flex justify-content-center">
-         <div class="card px-1 py-4">
-            <div class="card-body">
-                <h6 class="card-title mb-4 text-center h3">Crear jugador</h6>
-                <input class="form-control" type="hidden" name="IdEquipo" value='@ViewBag.InfoEquipo.IdEquipo' >
+
+          <div class="container mt-5 mb-5 d-flex justify-content-center">
+              <div class="card px-1 py-4">
+                  <div class="card-body">
+                      <h6 class="card-title mb-4 text-center h3">Crear jugador</h6>
+                      <input class="form-control" type="hidden" name="IdEquipo" value='@ViewBag.InfoEquipo.IdEquipo' >
             
-         <div class="row mb-3">
-            <div class="col-sm-12">
-                <div class="form-group">
-                  <input class="form-control" type="text" placeholder="Nombre" autocomplete="off"name="Nombre" required> </div>
-                </div>
-            </div>
-        <div class="row mb-3">
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <div class="input-group"> <input class="form-control" type="date" autocomplete="off" required placeholder="Fecha de nacimiento" name="FechaNacimiento"> </div>
-              </div>
-          </div>
-      </div>
-          <div class="row mb-3">
-             <div class="col-sm-12">
-                <div class="form-group">
-                  <div class="input-group"> <input class="form-control" autocomplete="off" type="text" required placeholder="Equipo actual" name="EquipoActual"> </div>
-             </div>
-           </div>
-        </div>
-
-                 
-                    <p class="text-center">Foto del jugador</p>
-
-               
-            <div class="row mb-3">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                      
-                        <div class="input-group"> <input class="form-control"  type="file" required placeholder="Foto" name="Foto"> </div>
-             </div>
-                 </div>
-                   </div>  <div class="row mb-3">
-                    
-             <div class="col-sm-12">
-                <div class="form-group">
-                  <div class="input-group"> <input class="form-control" autocomplete="off" type="number" required placeholder="Número de camiseta" name="NumCamiseta"> </div>
-             </div>
-           </div>
-        </div>
+                       <div class="row mb-3">
+                          <div class="col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Nombre" autocomplete="off"name="Nombre" required> </div>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-sm-12">
+                              <div class="form-group">
+                                <div class="input-group"> <input class="form-control" type="date" autocomplete="off" required placeholder="Fecha de nacimiento" name="FechaNacimiento"> </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mb-3">
+                              <div class="col-sm-12">
+                                <div class="form-group">
+                                  <div class="input-group"> <input class="form-control" autocomplete="off" type="text" required placeholder="Equipo actual" name="EquipoActual"> </div>
+                                  </div>
+                                </div>
+                              </div>
+                                 <p class="text-center">Foto del jugador</p>  
+                                   <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                      <div class="form-group">
+                                         <div class="input-group"> <input class="form-control"  type="file" required placeholder="Foto" name="Foto"> </div>
+                                     </div>
+                                  </div>
+                                </div>  
+                                 <div class="row mb-3">
+                                  <div class="col-sm-12">
+                                   <div class="form-group">
+                                     <div class="input-group"> <input class="form-control" autocomplete="off" type="number" required placeholder="Número de camiseta" name="NumCamiseta"> </div>
+                                    </div>
+                                  </div>
+                               </div>
            
-                    @if(ViewBag.numeroRep == 1){
+                    @if(ViewBag.numeroRep == 1)
+                    {
                         <h5 class="text-warning">El número de camiseta ya fue usado, ingrese de nuevo</h5>
                     }
 
-
-
                      <input type="submit" value="Guardar" class="btn btn-primary" style="width: 300px;">
-                      <input type="reset" value="Restablecer" class="btn btn-danger"  style="width: 300px;">
-                     </div>
-               </div>
+                     <input type="reset" value="Restablecer" class="btn btn-danger"  style="width: 300px;">
+             </div>
+          </div>
         </form>
 
 
         
-       </section>
+      </section>
     
   </div>
 </div>
@@ -117,45 +112,30 @@
 
 
 
-  <table>
-  <thead>
-    <tr>
-      <th class="text-center" colspan="3">Jugadores de @ViewBag.InfoEquipo.Nombre</th>
-    </tr>
+    <table>
+      <thead>
+        <tr>
+          <th class="text-center" colspan="3">Jugadores de @ViewBag.InfoEquipo.Nombre</th>
+       </tr>
    
-  </thead>
-  <tbody>
+     </thead>
+ 
+     <tbody>
 
-
-      @foreach (Jugador jug in @ViewBag._ListaJugadores)
-            
+       @foreach (Jugador jug in @ViewBag._ListaJugadores) 
           {
         
            if(@jug.IdEquipo == ViewBag.InfoEquipo.IdEquipo)
               {
             <tr>
                <th class="blanco" scope="row">@jug.Nombre</th>
-     
-             @*  <td> <button type="button" class="open-modal blanco edit" data-open="modal1" >Detalle</button> </td>  *@
-               
-               <td><a class="blanco edit" href='@Url.Action("VerDetalleJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Detalle</a></td>
-               <td><a class="blanco delete" href='@Url.Action("EliminarJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Eliminar</a></td>
+    
+                 <td><a class="blanco edit" href='@Url.Action("VerDetalleJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Detalle</a></td>
+                <td><a class="blanco delete" href='@Url.Action("EliminarJugador","Home", new {IdJugador = jug.IdJugador, IdEquipo = jug.IdEquipo})'>Eliminar</a></td>
             </tr>
         }
                }
 
-  </tbody>
-</table>
+     </tbody>
+    </table>
 
-
-@*  <div class="modal" id="modal1" data-animation="slideInOutLeft">
-  <div class="modal-dialog">
-    <header class="modal-header">
-      Detalle Jugador:
-      
-
-      <button class="close-modal" aria-label="close modal" data-close>
-        ✕  
-      </button>
-
-      *@

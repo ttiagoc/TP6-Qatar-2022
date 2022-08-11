@@ -35,13 +35,7 @@ using Dapper;
                     db.Execute(SQL, new {pNombre = Eq.Nombre, pEscudo = Eq.Escudo, pCamiseta = Eq.Camiseta, pContinente = Eq.Continente, pCopasGanadas = Eq.CopasGanadas, pPagOficial = Eq.PagOficial, pVideo = Eq.Video} );
                 }
 
-                   
-
             }
-
-
-
-
 
              public static int EliminarJugador(int JugadorAEliminar){
                  int jugadoresEliminados = 0;

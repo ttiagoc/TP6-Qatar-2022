@@ -59,13 +59,13 @@ nav{
 .informacion{
   width: 600px;
   height: auto;
-  
+  max-width: 100%;
 }
 
 .informacion2{
   width: 900px;
   height: auto;
- 
+ max-width: 100%;
 }
 
 
@@ -107,7 +107,9 @@ nav{
   transform-style: preserve-3d;}
 
   
-  
+  input{
+    max-width: 100%;
+  }
 
     table {
       text-align: left;
@@ -118,6 +120,7 @@ nav{
       width: 500px;
       margin: 50px auto;
       border-radius: .25rem;
+      max-width: 100%;
     }
     
     thead tr:first-child {
@@ -239,7 +242,7 @@ nav{
 @media (max-width: 768px) {
  
     .vid{
-      width: auto;
+     max-width: 100%;
     }
    
   
@@ -346,23 +349,14 @@ nav{
   background-image: url("/Imagenes/fondo.png");
 }
 
-.borde1{
-  border-left: 2px;
-  border-top: 2px;
-  border-right: 2px;
-}
-
-.borde2{
-
-  border-left: 2px;
-  border-bottom: 2px;
-   border-right: 2px;
 
 
-}
-
-
-
+.giro:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;}
+   
 
 
 
